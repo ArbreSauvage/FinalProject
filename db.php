@@ -1,12 +1,12 @@
 <?php
-// db.php (Adapté pour les variables d'environnement de Hangar)
-$host = getenv('DB_HOST') ?: 'localhost';
-$db   = getenv('DB_NAME') ?: 'isep_joint_project';
-$user = getenv('DB_USERNAME') ?: 'root';
-$pass = getenv('DB_PASSWORD') ?: '';
+// db.php (Version locale modifiée pour envoyer vers Hangar en direct)
+$host = '178.33.122.21'; // L'IP de ta base Hangar
+$db   = 'hangardb_loch63011';
+$user = 'hangardb_loch63011';
+$pass = '9xf1UX3SIXZa7dyoWLdob91i';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=" . (getenv('DB_PORT') ?: '3306');
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=3306";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
